@@ -10,6 +10,7 @@ package controller;
  * @author Madhuka
  */
 import controller.util.JsfUtil;
+import java.io.Serializable;
 import java.util.Hashtable;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
@@ -24,7 +25,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class LdapEntryController {
+public class LdapEntryController implements Serializable{
 
     private DirContext dirContext = null;
 
