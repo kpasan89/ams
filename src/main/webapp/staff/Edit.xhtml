@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="StaffEditDlg" widgetVar="StaffEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditStaffTitle}">
+            <h:form id="StaffEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{staffController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditStaffLabel_tittle}" for="tittle" />
+                        <p:inputText id="tittle" value="#{staffController.selected.tittle}" title="#{bundle.EditStaffTitle_tittle}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_firstName}" for="firstName" />
+                        <p:inputText id="firstName" value="#{staffController.selected.firstName}" title="#{bundle.EditStaffTitle_firstName}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_lastName}" for="lastName" />
+                        <p:inputText id="lastName" value="#{staffController.selected.lastName}" title="#{bundle.EditStaffTitle_lastName}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_sex}" for="sex" />
+                        <p:inputText id="sex" value="#{staffController.selected.sex}" title="#{bundle.EditStaffTitle_sex}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_age}" for="age" />
+                        <p:inputText id="age" value="#{staffController.selected.age}" title="#{bundle.EditStaffTitle_age}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_birthday}" for="birthday" />
+                        <p:calendar id="birthday" pattern="MM/dd/yyyy HH:mm:ss" value="#{staffController.selected.birthday}" title="#{bundle.EditStaffTitle_birthday}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditStaffLabel_username}" for="username" />
+                        <p:inputText id="username" value="#{staffController.selected.username}" title="#{bundle.EditStaffTitle_username}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_password}" for="password" />
+                        <p:inputText id="password" value="#{staffController.selected.password}" title="#{bundle.EditStaffTitle_password}" />
+                        <p:outputLabel value="#{bundle.EditStaffLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{staffController.selected.id}" title="#{bundle.EditStaffTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{staffController.update}" value="#{bundle.Save}" update="display,:StaffListForm:datalist,:growl" oncomplete="handleSubmit(args, 'StaffEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="StaffEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

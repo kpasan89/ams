@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="body" >
+                <p:outputLabel value="User Details"></p:outputLabel>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="ID"></p:outputLabel>
+                    <p:outputLabel value="#{ldapEntryController.aidString}"></p:outputLabel>
+                    <p:outputLabel value="First Name"></p:outputLabel>
+                    <p:outputLabel value="#{ldapEntryController.acnString}"></p:outputLabel>
+                    <p:outputLabel value="Last Name"></p:outputLabel>
+                    <p:outputLabel value="#{ldapEntryController.asnString}"></p:outputLabel>
+                    <p:outputLabel value="e Mail"></p:outputLabel>
+                    <p:outputLabel value="#{ldapEntryController.amailString}"></p:outputLabel>
+                </p:panelGrid>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+
+</html>
+
