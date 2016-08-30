@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com</groupId>
-    <artifactId>ams1</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>acims</artifactId>
+    <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>ams1</name>
+    <name>acims</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -49,6 +49,12 @@
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.jndi/ldap -->
+        <dependency>
+            <groupId>com.sun.jndi</groupId>
+            <artifactId>ldap</artifactId>
+            <version>1.2.4</version>
         </dependency>
     </dependencies>
 
