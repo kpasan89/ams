@@ -51,7 +51,6 @@ public class LdapEntryController implements Serializable{
             ee.printStackTrace();
         }
     }
-    String userID;
     Attribute attribute;
 
     public Attribute getAttribute() {
@@ -62,13 +61,6 @@ public class LdapEntryController implements Serializable{
         this.attribute = attribute;
     }
 
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
 
     Attribute aid;
     Attribute acn;
@@ -179,7 +171,7 @@ public class LdapEntryController implements Serializable{
             logged = true;
 
         } else {
-            JsfUtil.addErrorMessage("Wrong Password");
+            JsfUtil.addErrorMessage("Wrong Details");
             logged = false;
         }
         return "index";
